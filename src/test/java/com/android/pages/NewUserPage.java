@@ -15,10 +15,10 @@ public class NewUserPage {
 	public static String lastLanguage="//android.widget.ImageView[@content-desc=\"অসমীয়া\"]";
 	
 	//Login Credentials
-	public static String mobileNumberFieldClass="android.widget.EditText";
-	public static String mobileField="//android.widget.EditText";
-	public static String mobileEntry="new UiSelector().className(\"android.widget.EditText\")";
-	public static String otpField="";
+	//public static String mobileNumberFieldClass="android.widget.EditText";
+	public static String mobileFieldXpath="//android.widget.EditText";
+	//public static String mobileEntry="new UiSelector().className(\"android.widget.EditText\")";
+	public static String sendOTP="//android.widget.Button[@content-desc=\"Send OTP\"]";
 	
 	
 	
