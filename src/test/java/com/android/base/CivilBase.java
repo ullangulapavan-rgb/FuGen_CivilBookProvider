@@ -1,15 +1,18 @@
 package com.android.base;
 
 import java.net.URI;
+import java.time.Duration;
+import java.util.Collections;
 
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 public class CivilBase {
 
-	public static AppiumDriver driver;
+	public static AndroidDriver driver;
 	
 	public static void setup() throws Exception{
 		DesiredCapabilities caps = new DesiredCapabilities();
@@ -34,5 +37,17 @@ public class CivilBase {
 			return "driver not closed yet";
 		}
 		
+	}
+	
+	
+	public static void coOrdinates(int x, int y) throws Exception{
+		
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
+		Sequence tap = new Sequence(finger,1);
+		
+		tap.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), x,y));
+		tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		driver.perform(Collections.singletonList(tap));
 	}
 }
