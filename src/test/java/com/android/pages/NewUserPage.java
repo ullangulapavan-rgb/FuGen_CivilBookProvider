@@ -1,6 +1,6 @@
-package com.learning.pages;
+package com.android.pages;
 
-public class OpenApp {
+public class NewUserPage {
 	
 	public static String allowNotifications="//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_button\"]";
 	public static String startWidgetBtn="//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[3]";
