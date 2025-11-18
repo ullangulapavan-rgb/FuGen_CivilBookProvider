@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.android.base.CivilBase;
-import com.learning.pages.OpenApp;
+import com.android.pages.NewUserPage;
 
 
 public class WelcomeMessage extends CivilBase{
@@ -30,24 +30,24 @@ public class WelcomeMessage extends CivilBase{
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		
-		WebElement notifyPermission=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OpenApp.allowNotifications)));
+		WebElement notifyPermission=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NewUserPage.allowNotifications)));
 		
 		notifyPermission.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));		
-		driver.findElement(By.xpath(OpenApp.startWidgetBtn)).click();
+		driver.findElement(By.xpath(NewUserPage.startWidgetBtn)).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(By.xpath(OpenApp.startWidgetBtn)).click();
+		driver.findElement(By.xpath(NewUserPage.startWidgetBtn)).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(By.xpath(OpenApp.getStartedBtn)).click();
+		driver.findElement(By.xpath(NewUserPage.getStartedBtn)).click();
 		
-		WebElement allowNavigation= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OpenApp.allowNavigationBtn)));
+		WebElement allowNavigation= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NewUserPage.allowNavigationBtn)));
 		allowNavigation.click();
 		
-		WebElement language = driver.findElement(By.xpath(OpenApp.selectEnglish));
+		WebElement language = driver.findElement(By.xpath(NewUserPage.selectEnglish));
 		language.click();
 		
 		
-		WebElement mobileNoElement = driver.findElement(By.xpath(OpenApp.mobileField));
+		WebElement mobileNoElement = driver.findElement(By.xpath(NewUserPage.mobileField));
 
 		// Step 1: Tap to focus (required for Flutter TextField)
 		Point p = mobileNoElement.getLocation();
